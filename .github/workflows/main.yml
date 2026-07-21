@@ -14,3 +14,6 @@ jobs:
     CD:
        needs: [CI]
        uses: Lucas-19sc/repo-reaproveitavel/.github/workflows/cd.yaml@main
+       with: 
+
+        ambiente: producao
