@@ -9,8 +9,8 @@ on:
          description: "Ambiente onde vai ser feito o deploy"
          options: 
            - "desenvolvimento"
-           -  "homologacao"
-           -  "producao"
+           - "homologacao"
+           - "producao"
 
 jobs:
     CI:
@@ -25,6 +25,5 @@ jobs:
     CD:
        needs: [CI]
        uses: Lucas-19sc/repo-reaproveitavel/.github/workflows/cd.yaml@main
-       with: 
-
-        ambiente: ${{ inputs.ambiente }}
+       secrets:
+         ambiente: ${{ secrets.AMBIENTE_ENTREGA }}
